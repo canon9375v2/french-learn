@@ -1,5 +1,6 @@
 import { essentialPhrases, phraseStudyNotes } from '../data/phrases';
 import { SpeakButton } from '../components/SpeakButton';
+import { SyllableSpeakButton } from '../components/SyllableSpeakButton';
 import { useLanguage } from '../context/LanguageContext';
 import { useProgress } from '../context/ProgressContext';
 
@@ -45,7 +46,11 @@ export function PhrasesPage() {
                 </div>
                 <div>
                   <span>{ui('phrases.pronunciation')}</span>
-                  <p className="phrase-ipa">{t(phraseStudyNotes[p.id].pronunciation)}</p>
+                  <SyllableSpeakButton
+                    text={p.fr}
+                    ipa={t(phraseStudyNotes[p.id].pronunciation)}
+                    label={ui('phrases.playSegments')}
+                  />
                 </div>
                 <div>
                   <span>{ui('phrases.soundRule')}</span>

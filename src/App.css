@@ -1159,6 +1159,21 @@
   letter-spacing: 0;
 }
 
+.phrase-ipa-button {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #090807;
+  text-align: left;
+  cursor: pointer;
+}
+
+.phrase-ipa-button:hover,
+.phrase-ipa-button.speaking {
+  color: var(--accent);
+}
+
 .phrase-practice-btn {
   border: 1px solid rgba(115, 83, 35, 0.55);
   background: linear-gradient(#c8b477, #a99051);
