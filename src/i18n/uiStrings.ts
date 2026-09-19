@@ -18,7 +18,7 @@ export const uiStrings = {
   'phrases.structure': { en: 'Structure', zh: '句型結構' },
   'phrases.pronunciation': { en: 'Pronunciation', zh: '讀音（IPA）' },
   'phrases.soundRule': { en: 'Sound rule', zh: '發音重點' },
-  'phrases.playSegments': { en: 'Play each part slowly', zh: '逐段慢速播放' },
+  'phrases.playSegments': { en: 'Play this part slowly', zh: '播放這一段' },
 
   'home.title': { en: 'Learn French from zero to TCF Canada', zh: '從零開始學法文，邁向 TCF Canada' },
   'home.subtitle': {

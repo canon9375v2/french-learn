@@ -19,55 +19,54 @@ interface SyllableSpeakButtonProps {
   label: string;
 }
 
-/** Plays one spoken word at a time, leaving a short pause for shadowing. */
+/** Lets learners play one spoken segment at a time for deliberate shadowing. */
 export function SyllableSpeakButton({ text, ipa, label }: SyllableSpeakButtonProps) {
-  const [playing, setPlaying] = useState(false);
-  const cancelled = useRef(false);
+  const [playingSegment, setPlayingSegment] = useState<string | null>(null);
+  const mounted = useRef(true);
 
   useEffect(() => {
+    mounted.current = true;
     window.speechSynthesis.onvoiceschanged = () => {
       cachedFrenchVoice = undefined;
     };
     return () => {
-      cancelled.current = true;
+      mounted.current = false;
     };
   }, []);
 
-  const playSegments = () => {
+  const segments = text.replace(/[?!,.…]/g, '').split(/\s+/).filter(Boolean);
+
+  const playSegment = (segment: string) => {
     window.speechSynthesis.cancel();
-    cancelled.current = false;
-    const segments = text.replace(/[?!,.…]/g, '').split(/\s+/).filter(Boolean);
     const voice = getFrenchVoice();
-    let index = 0;
-    setPlaying(true);
-
-    const playNext = () => {
-      if (cancelled.current || index >= segments.length) {
-        setPlaying(false);
-        return;
-      }
-      const utterance = new SpeechSynthesisUtterance(segments[index]);
-      index += 1;
-      if (voice) utterance.voice = voice;
-      utterance.lang = voice?.lang ?? 'fr-FR';
-      utterance.rate = 0.58;
-      utterance.onend = () => window.setTimeout(playNext, 180);
-      utterance.onerror = playNext;
-      window.speechSynthesis.speak(utterance);
+    const utterance = new SpeechSynthesisUtterance(segment);
+    if (voice) utterance.voice = voice;
+    utterance.lang = voice?.lang ?? 'fr-FR';
+    utterance.rate = 0.58;
+    utterance.onend = utterance.onerror = () => {
+      if (mounted.current) setPlayingSegment(null);
     };
-
-    playNext();
+    setPlayingSegment(segment);
+    window.speechSynthesis.speak(utterance);
   };
 
   return (
-    <button
-      type="button"
-      className={`phrase-ipa phrase-ipa-button${playing ? ' speaking' : ''}`}
-      onClick={playSegments}
-      title={label}
-      aria-label={label}
-    >
-      {playing ? '🔊 ' : '🔉 '}{ipa}
-    </button>
+    <div>
+      <p className="phrase-ipa">{ipa}</p>
+      <div className="phrase-segment-buttons" aria-label={label}>
+        {segments.map((segment, index) => (
+          <button
+            type="button"
+            className={playingSegment === segment ? 'speaking' : ''}
+            key={`${segment}-${index}`}
+            onClick={() => playSegment(segment)}
+            title={label}
+            aria-label={`${label}: ${segment}`}
+          >
+            {playingSegment === segment ? '🔊' : '🔉'} {segment}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }

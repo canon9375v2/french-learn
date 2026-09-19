@@ -1159,18 +1159,26 @@
   letter-spacing: 0;
 }
 
-.phrase-ipa-button {
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: transparent;
+.phrase-segment-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 7px;
+}
+
+.phrase-segment-buttons button {
+  border: 1px solid rgba(111, 82, 43, 0.36);
+  border-radius: 5px;
+  padding: 3px 6px;
+  background: rgba(255, 253, 241, 0.65);
   color: #090807;
-  text-align: left;
+  font-size: 12px;
   cursor: pointer;
 }
 
-.phrase-ipa-button:hover,
-.phrase-ipa-button.speaking {
+.phrase-segment-buttons button:hover,
+.phrase-segment-buttons button.speaking {
+  border-color: var(--accent);
   color: var(--accent);
 }
 
