@@ -25,6 +25,15 @@ export function LevelOverview() {
 
       <div className="unit-list">
         {units.length === 0 && <p>{ui('level.comingSoon')}</p>}
+        {meta.id === 'A1' && (
+          <Link to="/level/A1/etre" className="unit-card etre-unit-card">
+            <div className="unit-card-header">
+              <span className="unit-order">{ui('level.grammarLabel')}</span>
+            </div>
+            <h3>{ui('etre.title')}</h3>
+            <p>{ui('etre.intro')}</p>
+          </Link>
+        )}
         {units.map((unit) => {
           const done = !!state.completedUnits[unit.id];
           const attempt = state.quizAttempts[unit.id];

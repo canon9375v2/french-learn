@@ -1,14 +1,23 @@
 import { useMemo, useState } from 'react';
-import { essentialPhrases, simplePhrases, type Phrase } from '../data/phrases';
+import { essentialPhrases, simplePhrases } from '../data/phrases';
+import { etreSentences } from '../data/etreVerb';
 import { useLanguage } from '../context/LanguageContext';
 import { useProgress } from '../context/ProgressContext';
 import { SpeakButton } from '../components/SpeakButton';
+import type { Localized } from '../types';
 
-type Deck = 'all' | 'essential' | 'simple';
+interface FlashcardSource {
+  id: string;
+  fr: string;
+  meaning: Localized;
+}
 
-const phraseSets: Record<Exclude<Deck, 'all'>, Phrase[]> = {
+type Deck = 'all' | 'essential' | 'simple' | 'etre';
+
+const phraseSets: Record<Exclude<Deck, 'all'>, FlashcardSource[]> = {
   essential: essentialPhrases,
   simple: simplePhrases,
+  etre: etreSentences,
 };
 
 export function FlashcardsPage() {
@@ -19,7 +28,7 @@ export function FlashcardsPage() {
   const [revealed, setRevealed] = useState(false);
 
   const cards = useMemo(() => {
-    const source = deck === 'all' ? [...essentialPhrases, ...simplePhrases] : phraseSets[deck];
+    const source = deck === 'all' ? [...essentialPhrases, ...simplePhrases, ...etreSentences] : phraseSets[deck];
     return source.filter((phrase) => state.flashcards[phrase.id]);
   }, [deck, state.flashcards]);
   const card = cards.length ? cards[index % cards.length] : null;
@@ -46,7 +55,7 @@ export function FlashcardsPage() {
       <p className="lesson-description">{ui('flashcards.intro')}</p>
 
       <div className="flashcard-decks" role="group" aria-label={ui('flashcards.deckLabel')}>
-        {(['all', 'essential', 'simple'] as Deck[]).map((deckId) => (
+        {(['all', 'essential', 'simple', 'etre'] as Deck[]).map((deckId) => (
           <button
             type="button"
             key={deckId}

@@ -670,6 +670,43 @@
   background: var(--code-bg);
 }
 
+.etre-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.etre-table th,
+.etre-table td {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.etre-table th {
+  background: var(--code-bg);
+}
+
+.etre-form {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.etre-ipa {
+  font-family: var(--mono);
+  color: var(--accent);
+}
+
+.etre-pronoun-meaning {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.etre-unit-card {
+  border-color: var(--accent-border);
+}
+
 .tips-list {
   padding-left: 20px;
   line-height: 1.7;

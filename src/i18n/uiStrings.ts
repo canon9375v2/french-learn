@@ -22,6 +22,17 @@ export const uiStrings = {
   'phrases.pronunciation': { en: 'Pronunciation', zh: '讀音（IPA）' },
   'phrases.soundRule': { en: 'Sound rule', zh: '發音重點' },
   'phrases.wordUsage': { en: 'Word usage', zh: '字的用法' },
+
+  'etre.title': { en: 'Être (to be) — conjugation & 6 common sentences', zh: 'Être（是）動詞變化＋6 句常用短句' },
+  'etre.intro': {
+    en: 'Être is one of the most important irregular verbs in French. Learn its six present-tense forms, then see them in six everyday sentences with full structure, pronunciation, and word-usage notes.',
+    zh: 'Être 是法文中最重要的不規則動詞之一。先學會現在式的六種變化，再透過六句日常短句掌握句型結構、讀音與字的用法。',
+  },
+  'etre.conjugationTitle': { en: 'Present tense conjugation', zh: '現在式變化' },
+  'etre.table.pronoun': { en: 'Pronoun', zh: '人稱代詞' },
+  'etre.table.form': { en: 'Form', zh: '動詞變化' },
+  'etre.table.ipa': { en: 'IPA', zh: 'IPA 音標' },
+  'etre.sentencesTitle': { en: '6 common sentences with être', zh: '6 句常用 être 短句' },
   'phrases.playSegments': { en: 'Play this part slowly', zh: '播放這一段' },
   'phrases.pronunciationCheck': { en: '🎙 Record & pronunciation check', zh: '🎙 錄音與發音自檢' },
   'phrases.record': { en: '● Start recording', zh: '● 開始錄音' },
@@ -39,16 +50,17 @@ export const uiStrings = {
   'phrases.flashcardAdded': { en: '✓ In Flash Cards', zh: '✓ 已加入 Flash Card' },
 
   'flashcards.title': { en: 'Flash Cards', zh: 'Flash Cards' },
-  'flashcards.intro': { en: 'Build your own deck from the phrase pages. See the Chinese first, then reveal the French when you are ready.', zh: '在短句页选择想复习的句子。先看中文，再按键显示法文。' },
-  'flashcards.deckLabel': { en: 'Choose a phrase series', zh: '选择短句系列' },
-  'flashcards.deck.all': { en: 'All selected', zh: '全部已选' },
-  'flashcards.deck.essential': { en: 'Essential 30', zh: '必备 30 句' },
-  'flashcards.deck.simple': { en: 'Simple phrases', zh: '简单短句' },
-  'flashcards.empty': { en: 'No cards in this series yet. Add phrases from the phrase pages first.', zh: '这个系列还没有 Flash Card。请先在短句页面加入想复习的句子。' },
+  'flashcards.intro': { en: 'Build your own deck from the phrase pages. See the Chinese first, then reveal the French when you are ready.', zh: '在短句頁選擇想複習的句子。先看中文，再按鍵顯示法文。' },
+  'flashcards.deckLabel': { en: 'Choose a phrase series', zh: '選擇短句系列' },
+  'flashcards.deck.all': { en: 'All selected', zh: '全部已選' },
+  'flashcards.deck.essential': { en: 'Essential 30', zh: '必備 30 句' },
+  'flashcards.deck.simple': { en: 'Simple phrases', zh: '簡單短句' },
+  'flashcards.deck.etre': { en: 'Être sentences', zh: 'Être 短句' },
+  'flashcards.empty': { en: 'No cards in this series yet. Add phrases from the phrase pages first.', zh: '這個系列還沒有 Flash Card。請先在短句頁面加入想複習的句子。' },
   'flashcards.chinese': { en: 'Chinese', zh: '中文提示' },
-  'flashcards.reveal': { en: 'Show French', zh: '显示法文' },
-  'flashcards.remove': { en: 'Remove card', zh: '移除这张卡' },
-  'flashcards.next': { en: 'Next card →', zh: '下一张 →' },
+  'flashcards.reveal': { en: 'Show French', zh: '顯示法文' },
+  'flashcards.remove': { en: 'Remove card', zh: '移除這張卡' },
+  'flashcards.next': { en: 'Next card →', zh: '下一張 →' },
 
   'home.title': { en: 'Learn French from zero to TCF Canada', zh: '從零開始學法文，邁向 TCF Canada' },
   'home.subtitle': {
@@ -64,6 +76,7 @@ export const uiStrings = {
 
   'level.comingSoon': { en: 'Units for this level are coming soon.', zh: '此級別的單元即將推出。' },
   'level.unitLabel': { en: 'Unit {{order}}', zh: '第 {{order}} 單元' },
+  'level.grammarLabel': { en: 'Grammar focus', zh: '文法專頁' },
   'level.doneBadge': { en: '✓ Done', zh: '✓ 已完成' },
   'level.lastQuizScore': { en: 'Last quiz score: {{score}}/{{total}}', zh: '上次測驗分數：{{score}}/{{total}}' },
 
