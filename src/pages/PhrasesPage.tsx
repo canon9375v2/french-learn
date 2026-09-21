@@ -73,6 +73,16 @@ export function PhrasesPage({ phrases = essentialPhrases, title, intro }: Phrase
                   <span>{ui('phrases.soundRule')}</span>
                   <p>{t(studyNote.rule)}</p>
                 </div>
+                <div className="phrase-word-usage">
+                  <span>{ui('phrases.wordUsage')}</span>
+                  <ul>
+                    {studyNote.words.map((w) => (
+                      <li key={w.word}>
+                        <strong>{w.word}</strong> — {t(w.usage)}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>}
               <details className="phrase-pronunciation-check">
                 <summary>{ui('phrases.pronunciationCheck')}</summary>

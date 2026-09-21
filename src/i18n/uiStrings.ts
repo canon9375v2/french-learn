@@ -21,6 +21,7 @@ export const uiStrings = {
   'phrases.structure': { en: 'Structure', zh: '句型結構' },
   'phrases.pronunciation': { en: 'Pronunciation', zh: '讀音（IPA）' },
   'phrases.soundRule': { en: 'Sound rule', zh: '發音重點' },
+  'phrases.wordUsage': { en: 'Word usage', zh: '字的用法' },
   'phrases.playSegments': { en: 'Play this part slowly', zh: '播放這一段' },
   'phrases.pronunciationCheck': { en: '🎙 Record & pronunciation check', zh: '🎙 錄音與發音自檢' },
   'phrases.record': { en: '● Start recording', zh: '● 開始錄音' },
