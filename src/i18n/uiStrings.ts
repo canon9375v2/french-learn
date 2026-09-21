@@ -4,6 +4,7 @@ export const uiStrings = {
   'nav.pronunciation': { en: 'Pronunciation', zh: '發音' },
   'nav.phrases': { en: 'Phrases', zh: '常用短句' },
   'nav.progress': { en: 'Progress', zh: '學習進度' },
+  'nav.flashcards': { en: 'Flash Cards', zh: 'Flash Cards' },
   'nav.switchTo': { en: '中文', zh: 'English' },
 
   'phrases.title': { en: '30 Essential Beginner Phrases', zh: '初學法文必備 30 句短句' },
@@ -33,6 +34,20 @@ export const uiStrings = {
   'phrases.checkWords': { en: 'Practice these again: {{words}}', zh: '建議再練：{{words}}' },
   'phrases.allWordsRecognized': { en: 'All target words were recognized.', zh: '目標句子的詞語都已辨識到。' },
   'phrases.feedbackNote': { en: 'This checks recognized words, not a clinical accent score. Compare your recording with the model audio and IPA notes.', zh: '此功能比對辨識到的詞語，不是音位級口音評分；請同時對照標準音檔與 IPA 重點。' },
+  'phrases.addFlashcard': { en: '+ Flash Card', zh: '+ 加入 Flash Card' },
+  'phrases.flashcardAdded': { en: '✓ In Flash Cards', zh: '✓ 已加入 Flash Card' },
+
+  'flashcards.title': { en: 'Flash Cards', zh: 'Flash Cards' },
+  'flashcards.intro': { en: 'Build your own deck from the phrase pages. See the Chinese first, then reveal the French when you are ready.', zh: '在短句页选择想复习的句子。先看中文，再按键显示法文。' },
+  'flashcards.deckLabel': { en: 'Choose a phrase series', zh: '选择短句系列' },
+  'flashcards.deck.all': { en: 'All selected', zh: '全部已选' },
+  'flashcards.deck.essential': { en: 'Essential 30', zh: '必备 30 句' },
+  'flashcards.deck.simple': { en: 'Simple phrases', zh: '简单短句' },
+  'flashcards.empty': { en: 'No cards in this series yet. Add phrases from the phrase pages first.', zh: '这个系列还没有 Flash Card。请先在短句页面加入想复习的句子。' },
+  'flashcards.chinese': { en: 'Chinese', zh: '中文提示' },
+  'flashcards.reveal': { en: 'Show French', zh: '显示法文' },
+  'flashcards.remove': { en: 'Remove card', zh: '移除这张卡' },
+  'flashcards.next': { en: 'Next card →', zh: '下一张 →' },
 
   'home.title': { en: 'Learn French from zero to TCF Canada', zh: '從零開始學法文，邁向 TCF Canada' },
   'home.subtitle': {

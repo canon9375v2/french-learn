@@ -7,6 +7,7 @@ import { LevelOverview } from './pages/LevelOverview';
 import { LessonPage } from './pages/LessonPage';
 import { TCFInfoPage } from './pages/TCFInfoPage';
 import { ProgressPage } from './pages/ProgressPage';
+import { FlashcardsPage } from './pages/FlashcardsPage';
 import { simplePhrases } from './data/phrases';
 import { useLanguage } from './context/LanguageContext';
 import './App.css';
@@ -30,6 +31,7 @@ function App() {
           <Route path="/level/:levelId/:unitId" element={<LessonPage />} />
           <Route path="/tcf-canada" element={<TCFInfoPage />} />
           <Route path="/progress" element={<ProgressPage />} />
+          <Route path="/flashcards" element={<FlashcardsPage />} />
         </Routes>
       </main>
     </div>

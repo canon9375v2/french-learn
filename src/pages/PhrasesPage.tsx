@@ -20,7 +20,7 @@ interface PhrasesPageProps {
 
 export function PhrasesPage({ phrases = essentialPhrases, title, intro }: PhrasesPageProps) {
   const { t, ui } = useLanguage();
-  const { state, markPhrasePracticed, unmarkPhrasePracticed } = useProgress();
+  const { state, markPhrasePracticed, unmarkPhrasePracticed, toggleFlashcard } = useProgress();
   const practicedToday = state.phrasePractice[localDateKey()] ?? {};
 
   return (
@@ -45,6 +45,14 @@ export function PhrasesPage({ phrases = essentialPhrases, title, intro }: Phrase
                   aria-pressed={!!practicedToday[p.id]}
                 >
                   {practicedToday[p.id] ? ui('phrases.cancelPractice') : ui('phrases.practice')}
+                </button>
+                <button
+                  type="button"
+                  className={`phrase-flashcard-btn${state.flashcards[p.id] ? ' added' : ''}`}
+                  onClick={() => toggleFlashcard(p.id)}
+                  aria-pressed={!!state.flashcards[p.id]}
+                >
+                  {state.flashcards[p.id] ? ui('phrases.flashcardAdded') : ui('phrases.addFlashcard')}
                 </button>
               </div>
               <div className="phrase-meaning">{t(p.meaning)}</div>

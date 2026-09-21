@@ -97,4 +97,5 @@ export interface ProgressState {
   wordsReviewed: Record<string, boolean>;
   /** Phrase IDs grouped by the learner's local calendar date (YYYY-MM-DD). */
   phrasePractice: Record<string, Record<string, boolean>>;
+  flashcards: Record<string, boolean>;
 }

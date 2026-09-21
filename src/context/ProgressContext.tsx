@@ -20,9 +20,10 @@ function loadState(): ProgressState {
       quizAttempts: parsed.quizAttempts ?? {},
       wordsReviewed: parsed.wordsReviewed ?? {},
       phrasePractice: parsed.phrasePractice ?? {},
+      flashcards: parsed.flashcards ?? {},
     };
   } catch {
-    return { completedUnits: {}, quizAttempts: {}, wordsReviewed: {}, phrasePractice: {} };
+    return { completedUnits: {}, quizAttempts: {}, wordsReviewed: {}, phrasePractice: {}, flashcards: {} };
   }
 }
 
@@ -33,6 +34,7 @@ interface ProgressContextValue {
   markWordReviewed: (word: string) => void;
   markPhrasePracticed: (phraseId: string) => void;
   unmarkPhrasePracticed: (phraseId: string) => void;
+  toggleFlashcard: (phraseId: string) => void;
   resetProgress: () => void;
 }
 
@@ -81,7 +83,14 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
           return { ...prev, phrasePractice };
         });
       },
-      resetProgress: () => setState({ completedUnits: {}, quizAttempts: {}, wordsReviewed: {}, phrasePractice: {} }),
+      toggleFlashcard: (phraseId: string) =>
+        setState((prev) => {
+          const flashcards = { ...prev.flashcards };
+          if (flashcards[phraseId]) delete flashcards[phraseId];
+          else flashcards[phraseId] = true;
+          return { ...prev, flashcards };
+        }),
+      resetProgress: () => setState({ completedUnits: {}, quizAttempts: {}, wordsReviewed: {}, phrasePractice: {}, flashcards: {} }),
     }),
     [state],
   );

@@ -23,6 +23,7 @@ export function NavBar() {
         <NavLink to="/level/B2"><span className="nav-icon">🫙</span>B2</NavLink>
         <NavLink to="/tcf-canada"><span className="nav-icon">⌑</span>TCF Canada</NavLink>
         <NavLink to="/progress"><span className="nav-icon">🗓️</span>{ui('nav.progress')}</NavLink>
+        <NavLink to="/flashcards"><span className="nav-icon">🃏</span>{ui('nav.flashcards')}</NavLink>
         <button type="button" className="lang-toggle" onClick={toggleLang}>
           {ui('nav.switchTo')}
         </button>
