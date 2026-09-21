@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import type { SyllablePair } from '../data/phrases';
 
 let cachedFrenchVoice: SpeechSynthesisVoice | null | undefined;
 
@@ -14,14 +15,13 @@ function getFrenchVoice() {
 }
 
 interface SyllableSpeakButtonProps {
-  text: string;
-  ipa: string;
+  syllables: SyllablePair[];
   label: string;
 }
 
-/** Lets learners play one spoken segment at a time for deliberate shadowing. */
-export function SyllableSpeakButton({ text, ipa, label }: SyllableSpeakButtonProps) {
-  const [playingSegment, setPlayingSegment] = useState<string | null>(null);
+/** Lets learners play one spoken segment at a time, each paired with its own IPA, for deliberate shadowing. */
+export function SyllableSpeakButton({ syllables, label }: SyllableSpeakButtonProps) {
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
   const mounted = useRef(true);
 
   useEffect(() => {
@@ -34,36 +34,39 @@ export function SyllableSpeakButton({ text, ipa, label }: SyllableSpeakButtonPro
     };
   }, []);
 
-  const segments = text.replace(/[?!,.…]/g, '').split(/\s+/).filter(Boolean);
+  const fullIpa = `/${syllables.map((s) => s.ipa).join(' ')}/`;
 
-  const playSegment = (segment: string) => {
+  const playSegment = (index: number) => {
+    const segment = syllables[index];
+    if (segment.fr === '___') return;
     window.speechSynthesis.cancel();
     const voice = getFrenchVoice();
-    const utterance = new SpeechSynthesisUtterance(segment);
+    const utterance = new SpeechSynthesisUtterance(segment.fr);
     if (voice) utterance.voice = voice;
     utterance.lang = voice?.lang ?? 'fr-FR';
     utterance.rate = 0.58;
     utterance.onend = utterance.onerror = () => {
-      if (mounted.current) setPlayingSegment(null);
+      if (mounted.current) setPlayingIndex(null);
     };
-    setPlayingSegment(segment);
+    setPlayingIndex(index);
     window.speechSynthesis.speak(utterance);
   };
 
   return (
     <div>
-      <p className="phrase-ipa">{ipa}</p>
+      <p className="phrase-ipa">{fullIpa}</p>
       <div className="phrase-segment-buttons" aria-label={label}>
-        {segments.map((segment, index) => (
+        {syllables.map((segment, index) => (
           <button
             type="button"
-            className={playingSegment === segment ? 'speaking' : ''}
-            key={`${segment}-${index}`}
-            onClick={() => playSegment(segment)}
+            className={playingIndex === index ? 'speaking' : ''}
+            key={`${segment.fr}-${index}`}
+            onClick={() => playSegment(index)}
             title={label}
-            aria-label={`${label}: ${segment}`}
+            aria-label={`${label}: ${segment.fr}`}
           >
-            {playingSegment === segment ? '🔊' : '🔉'} {segment}
+            {playingIndex === index ? '🔊' : '🔉'} {segment.fr}
+            <span className="segment-ipa"> /{segment.ipa}/</span>
           </button>
         ))}
       </div>

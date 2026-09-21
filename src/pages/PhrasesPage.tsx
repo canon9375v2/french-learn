@@ -1,4 +1,5 @@
-import { essentialPhrases, phraseStudyNotes, type Phrase } from '../data/phrases';
+import { essentialPhrases, phraseStudyNotes, phraseSyllables, type Phrase } from '../data/phrases';
+import { findIpaSymbolsIn } from '../data/ipaGuide';
 import { SpeakButton } from '../components/SpeakButton';
 import { SyllableSpeakButton } from '../components/SyllableSpeakButton';
 import { PhrasePronunciationCheck } from '../components/PhrasePronunciationCheck';
@@ -31,6 +32,8 @@ export function PhrasesPage({ phrases = essentialPhrases, title, intro }: Phrase
       <ol className="phrase-list">
         {phrases.map((p, i) => {
           const studyNote = phraseStudyNotes[p.id];
+          const syllables = phraseSyllables[p.id];
+          const ipaGuideEntries = syllables ? findIpaSymbolsIn(syllables.map((s) => s.ipa)) : [];
           return (
           <li className="phrase-item" key={p.id}>
             <span className="phrase-number">{i + 1}</span>
@@ -64,8 +67,7 @@ export function PhrasesPage({ phrases = essentialPhrases, title, intro }: Phrase
                 <div>
                   <span>{ui('phrases.pronunciation')}</span>
                   <SyllableSpeakButton
-                    text={p.fr}
-                    ipa={t(studyNote.pronunciation)}
+                    syllables={phraseSyllables[p.id] ?? [{ fr: p.fr, ipa: t(studyNote.pronunciation).replace(/^\/|\/$/g, '') }]}
                     label={ui('phrases.playSegments')}
                   />
                 </div>
@@ -83,6 +85,22 @@ export function PhrasesPage({ phrases = essentialPhrases, title, intro }: Phrase
                     ))}
                   </ul>
                 </div>
+                {ipaGuideEntries.length > 0 && (
+                  <div className="phrase-ipa-guide">
+                    <span>{ui('phrases.ipaGuideTitle')}</span>
+                    <ul>
+                      {ipaGuideEntries.map((entry) => (
+                        <li key={entry.symbol}>
+                          <span className="ipa-guide-symbol">/{entry.symbol}/</span>
+                          <span className="ipa-guide-desc">{t(entry.description)}</span>
+                          <span className="ipa-guide-example">
+                            {entry.example.fr} <SpeakButton text={entry.example.fr} />
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>}
               <details className="phrase-pronunciation-check">
                 <summary>{ui('phrases.pronunciationCheck')}</summary>

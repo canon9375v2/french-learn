@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { etreConjugation, etreSentences } from '../data/etreVerb';
+import { findIpaSymbolsIn } from '../data/ipaGuide';
 import { SpeakButton } from '../components/SpeakButton';
 import { SyllableSpeakButton } from '../components/SyllableSpeakButton';
 import { useLanguage } from '../context/LanguageContext';
@@ -49,7 +50,9 @@ export function EtreVerbPage() {
       <section className="lesson-section">
         <h2>{ui('etre.sentencesTitle')}</h2>
         <ol className="phrase-list">
-          {etreSentences.map((s, i) => (
+          {etreSentences.map((s, i) => {
+            const ipaGuideEntries = findIpaSymbolsIn(s.syllables.map((seg) => seg.ipa));
+            return (
             <li className="phrase-item" key={s.id}>
               <span className="phrase-number">{i + 1}</span>
               <div className="phrase-body">
@@ -73,7 +76,7 @@ export function EtreVerbPage() {
                   </div>
                   <div>
                     <span>{ui('phrases.pronunciation')}</span>
-                    <SyllableSpeakButton text={s.fr} ipa={s.ipa} label={ui('phrases.playSegments')} />
+                    <SyllableSpeakButton syllables={s.syllables} label={ui('phrases.playSegments')} />
                   </div>
                   <div>
                     <span>{ui('phrases.soundRule')}</span>
@@ -89,10 +92,27 @@ export function EtreVerbPage() {
                       ))}
                     </ul>
                   </div>
+                  {ipaGuideEntries.length > 0 && (
+                    <div className="phrase-ipa-guide">
+                      <span>{ui('phrases.ipaGuideTitle')}</span>
+                      <ul>
+                        {ipaGuideEntries.map((entry) => (
+                          <li key={entry.symbol}>
+                            <span className="ipa-guide-symbol">/{entry.symbol}/</span>
+                            <span className="ipa-guide-desc">{t(entry.description)}</span>
+                            <span className="ipa-guide-example">
+                              {entry.example.fr} <SpeakButton text={entry.example.fr} />
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             </li>
-          ))}
+            );
+          })}
         </ol>
       </section>
     </div>

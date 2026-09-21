@@ -22,6 +22,7 @@ export const uiStrings = {
   'phrases.pronunciation': { en: 'Pronunciation', zh: '讀音（IPA）' },
   'phrases.soundRule': { en: 'Sound rule', zh: '發音重點' },
   'phrases.wordUsage': { en: 'Word usage', zh: '字的用法' },
+  'phrases.ipaGuideTitle': { en: 'How to pronounce these sounds', zh: '拼音的讀法' },
 
   'etre.title': { en: 'Être (to be) — conjugation & 6 common sentences', zh: 'Être（是）動詞變化＋6 句常用短句' },
   'etre.intro': {

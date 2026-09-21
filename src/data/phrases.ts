@@ -194,6 +194,60 @@ export const phraseStudyNotes: Record<string, PhraseStudyNote> = {
   ] },
 };
 
+export interface SyllablePair {
+  fr: string;
+  ipa: string;
+}
+
+/**
+ * Per-word (or per-liaison-group, where two words are pronounced as one
+ * linked unit) breakdown pairing each spoken chunk with its IPA, for the
+ * clickable pronunciation buttons. Keyed by phrase id.
+ */
+export const phraseSyllables: Record<string, SyllablePair[]> = {
+  p1: [{ fr: 'Comment', ipa: 'kɔ.mɑ̃' }, { fr: 'tu', ipa: 'ty' }, { fr: "t'appelles", ipa: 'ta.pɛl' }],
+  p2: [{ fr: 'Depuis', ipa: 'də.pɥi' }, { fr: 'combien', ipa: 'kɔ̃.bjɛ̃' }, { fr: 'de', ipa: 'də' }, { fr: 'temps', ipa: 'tɑ̃' }, { fr: 'apprends-tu', ipa: 'a.pʁɑ̃ ty' }, { fr: 'le', ipa: 'lə' }, { fr: 'français', ipa: 'fʁɑ̃.sɛ' }],
+  p3: [{ fr: "D'où", ipa: 'du' }, { fr: 'viens-tu', ipa: 'vjɛ̃ ty' }],
+  p4: [{ fr: 'Quels', ipa: 'kɛl' }, { fr: 'sont', ipa: 'sɔ̃' }, { fr: 'tes', ipa: 'te' }, { fr: 'loisirs', ipa: 'lwa.ziʁ' }],
+  p5: [{ fr: 'Où', ipa: 'u' }, { fr: 'habites-tu', ipa: 'a.bit ty' }],
+  p6: [{ fr: 'As-tu', ipa: 'a ty' }, { fr: 'déjà', ipa: 'de.ʒa' }, { fr: 'dansé', ipa: 'dɑ̃.se' }],
+  p7: [{ fr: 'Comment', ipa: 'kɔ.mɑ̃' }, { fr: 'vas-tu', ipa: 'va ty' }],
+  p8: [{ fr: 'Est-ce', ipa: 'ɛs' }, { fr: 'que', ipa: 'kə' }, { fr: 'je', ipa: 'ʒə' }, { fr: 'peux', ipa: 'pø' }, { fr: 'cuisiner', ipa: 'kɥi.zi.ne' }],
+  p9: [{ fr: 'Et', ipa: 'e' }, { fr: 'toi', ipa: 'twa' }],
+  p10: [{ fr: 'Quand', ipa: 'kɑ̃' }, { fr: 'as-tu', ipa: 'a ty' }, { fr: 'voyagé', ipa: 'vwa.ja.ʒe' }],
+  p11: [{ fr: 'Enchanté(e)', ipa: 'ɑ̃.ʃɑ̃.te' }],
+  p12: [{ fr: 'Tu', ipa: 'ty' }, { fr: 'aimes', ipa: 'ɛm' }, { fr: 'la', ipa: 'la' }, { fr: 'musique', ipa: 'my.zik' }],
+  p13: [{ fr: "Qu'est-ce", ipa: 'kɛs' }, { fr: 'que', ipa: 'kə' }, { fr: 'tu', ipa: 'ty' }, { fr: 'fais', ipa: 'fɛ' }],
+  p14: [{ fr: "Qu'est-ce", ipa: 'kɛs' }, { fr: 'que', ipa: 'kə' }, { fr: 'ça', ipa: 'sa' }, { fr: 'veut', ipa: 'vø' }, { fr: 'dire', ipa: 'diʁ' }],
+  p15: [{ fr: 'Est-ce', ipa: 'ɛs' }, { fr: 'que', ipa: 'kə' }, { fr: 'tu', ipa: 'ty' }, { fr: 'parles', ipa: 'paʁl' }, { fr: 'français', ipa: 'fʁɑ̃.sɛ' }],
+  p16: [{ fr: 'Est-ce', ipa: 'ɛs' }, { fr: 'que', ipa: 'kə' }, { fr: 'tu', ipa: 'ty' }, { fr: 'joues', ipa: 'ʒu' }, { fr: 'du', ipa: 'dy' }, { fr: 'piano', ipa: 'pja.no' }],
+  p17: [{ fr: 'Est-ce', ipa: 'ɛs' }, { fr: "qu'il", ipa: 'kil' }, { fr: 'y', ipa: 'i' }, { fr: 'a', ipa: 'a' }, { fr: 'un', ipa: 'ɛ̃' }, { fr: 'restaurant', ipa: 'ʁɛs.to.ʁɑ̃' }, { fr: 'ici', ipa: 'i.si' }],
+  p18: [{ fr: 'Pourquoi', ipa: 'puʁ.kwa' }, { fr: 'apprends-tu', ipa: 'a.pʁɑ̃ ty' }, { fr: 'le', ipa: 'lə' }, { fr: 'français', ipa: 'fʁɑ̃.sɛ' }],
+  p19: [{ fr: 'Répète', ipa: 'ʁe.pɛt' }, { fr: "s'il", ipa: 'sil' }, { fr: 'te', ipa: 'tə' }, { fr: 'plaît', ipa: 'plɛ' }],
+  p20: [{ fr: "C'est", ipa: 'sɛ' }, { fr: 'pour', ipa: 'puʁ' }, { fr: 'le', ipa: 'lə' }, { fr: 'travail', ipa: 'tʁa.vaj' }],
+  p21: [{ fr: 'Combien', ipa: 'kɔ̃.bjɛ̃' }, { fr: 'ça', ipa: 'sa' }, { fr: 'coûte', ipa: 'kut' }],
+  p22: [{ fr: 'Je', ipa: 'ʒə' }, { fr: 'ne', ipa: 'nə' }, { fr: 'comprends', ipa: 'kɔ̃.pʁɑ̃' }, { fr: 'pas', ipa: 'pa' }],
+  p23: [{ fr: 'Je', ipa: 'ʒə' }, { fr: "m'appelle", ipa: 'ma.pɛl' }],
+  p24: [{ fr: 'Où', ipa: 'u' }, { fr: 'sont', ipa: 'sɔ̃' }, { fr: 'les', ipa: 'le' }, { fr: 'toilettes', ipa: 'twa.lɛt' }],
+  p25: [{ fr: 'Peux-tu', ipa: 'pø ty' }, { fr: "m'aider", ipa: 'me.de' }],
+  p26: [{ fr: 'Je', ipa: 'ʒə' }, { fr: 'suis', ipa: 'sɥi' }, { fr: 'ravi(e)', ipa: 'ʁa.vi' }, { fr: 'de', ipa: 'də' }, { fr: 'te', ipa: 'tə' }, { fr: 'rencontrer', ipa: 'ʁɑ̃.kɔ̃.tʁe' }],
+  p27: [{ fr: 'Excusez-moi', ipa: 'ɛks.ky.ze mwa' }],
+  p28: [{ fr: 'Je', ipa: 'ʒə' }, { fr: 'ne', ipa: 'nə' }, { fr: 'sais', ipa: 'sɛ' }, { fr: 'pas', ipa: 'pa' }],
+  p29: [{ fr: 'Quelle heure', ipa: 'kɛ.lœʁ' }, { fr: 'est-il', ipa: 'ɛ.til' }],
+  p30: [{ fr: 'Parle', ipa: 'paʁl' }, { fr: 'plus', ipa: 'ply' }, { fr: 'lentement', ipa: 'lɑ̃t.mɑ̃' }, { fr: "s'il", ipa: 'sil' }, { fr: 'te', ipa: 'tə' }, { fr: 'plaît', ipa: 'plɛ' }],
+  'simple-1': [{ fr: 'Comment', ipa: 'kɔ.mɑ̃' }, { fr: 'ça', ipa: 'sa' }, { fr: 'va', ipa: 'va' }],
+  'simple-2': [{ fr: 'Ça', ipa: 'sa' }, { fr: 'va', ipa: 'va' }, { fr: 'bien', ipa: 'bjɛ̃' }],
+  'simple-3': [{ fr: 'Comment', ipa: 'kɔ.mɑ̃' }, { fr: 'tu', ipa: 'ty' }, { fr: "t'appelles", ipa: 'ta.pɛl' }],
+  'simple-4': [{ fr: 'Je', ipa: 'ʒə' }, { fr: "m'appelle", ipa: 'ma.pɛl' }, { fr: '___', ipa: '…' }],
+  'simple-5': [{ fr: 'Tu', ipa: 'ty' }, { fr: 'viens', ipa: 'vjɛ̃' }, { fr: "d'où", ipa: 'du' }],
+  'simple-6': [{ fr: 'Je', ipa: 'ʒə' }, { fr: 'viens', ipa: 'vjɛ̃' }, { fr: 'de', ipa: 'də' }, { fr: 'Hong', ipa: 'ɔ̃' }, { fr: 'Kong', ipa: 'kɔ̃ŋ' }],
+  'simple-7': [{ fr: 'Il', ipa: 'il' }, { fr: 'est', ipa: 'ɛ' }, { fr: 'quelle heure', ipa: 'kɛ.lœʁ' }],
+  'simple-8': [{ fr: 'Il', ipa: 'il' }, { fr: 'est', ipa: 'ɛ' }, { fr: 'trois heures', ipa: 'tʁwa.z‿œʁ' }],
+  'simple-9': [{ fr: 'Je', ipa: 'ʒə' }, { fr: 'suis', ipa: 'sɥi' }, { fr: 'un', ipa: 'ɛ̃' }, { fr: 'peu', ipa: 'pø' }, { fr: 'fatigué(e)', ipa: 'fa.ti.ɡe' }],
+  'simple-10': [{ fr: 'À', ipa: 'a' }, { fr: 'demain', ipa: 'də.mɛ̃' }],
+  'simple-11': [{ fr: 'Au', ipa: 'o' }, { fr: 'revoir', ipa: 'ʁə.vwaʁ' }],
+};
+
 export const essentialPhrases: Phrase[] = [
   {
     id: 'p1',

@@ -1339,6 +1339,46 @@
   letter-spacing: 0;
 }
 
+.phrase-ipa-guide {
+  grid-column: 1 / -1;
+}
+
+.phrase-ipa-guide ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.phrase-ipa-guide li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.ipa-guide-symbol {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 40px;
+}
+
+.ipa-guide-desc {
+  flex: 1;
+  min-width: 160px;
+}
+
+.ipa-guide-example {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-style: italic;
+}
+
 .phrase-segment-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -1360,6 +1400,12 @@
 .phrase-segment-buttons button.speaking {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.segment-ipa {
+  font-family: var(--mono);
+  opacity: 0.7;
+  margin-left: 2px;
 }
 
 .phrase-pronunciation-check {

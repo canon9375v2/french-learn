@@ -1,5 +1,5 @@
 import type { Localized } from '../types';
-import type { WordUsage } from './phrases';
+import type { WordUsage, SyllablePair } from './phrases';
 
 export interface EtreForm {
   pronoun: string;
@@ -25,6 +25,7 @@ export interface EtreSentence {
   ipa: string;
   soundRule: Localized;
   words: WordUsage[];
+  syllables: SyllablePair[];
 }
 
 export const etreSentences: EtreSentence[] = [
@@ -42,6 +43,7 @@ export const etreSentences: EtreSentence[] = [
       { word: 'suis', usage: { en: '"je" form of être (to be).', zh: 'être（是）的 je 變位。' } },
       { word: 'français', usage: { en: 'Nationality adjective, written lowercase when describing a person.', zh: '國籍形容詞，描述人時小寫（非專有名詞）。' } },
     ],
+    syllables: [{ fr: 'Je', ipa: 'ʒə' }, { fr: 'suis', ipa: 'sɥi' }, { fr: 'français', ipa: 'fʁɑ̃.sɛ' }],
   },
   {
     id: 'etre-2',
@@ -57,6 +59,7 @@ export const etreSentences: EtreSentence[] = [
       { word: 'es', usage: { en: '"tu" form of être.', zh: 'être 的 tu 變位。' } },
       { word: 'hongkongais(e)', usage: { en: 'Adjective "from Hong Kong"; add (e) for a feminine subject.', zh: '「香港的／香港人」形容詞，陰性主詞加 e。' } },
     ],
+    syllables: [{ fr: 'Tu', ipa: 'ty' }, { fr: 'es', ipa: 'ɛ' }, { fr: 'hongkongais(e)', ipa: 'ɔ̃.kɔ̃.ɡɛ' }],
   },
   {
     id: 'etre-3',
@@ -72,6 +75,7 @@ export const etreSentences: EtreSentence[] = [
       { word: 'est', usage: { en: '"il / elle / on" form of être.', zh: 'être 的 il/elle/on 變位。' } },
       { word: 'grand', usage: { en: 'Adjective "tall", agreeing with a masculine subject.', zh: '形容詞「高的」，與陽性主詞一致。' } },
     ],
+    syllables: [{ fr: 'Il', ipa: 'il' }, { fr: 'est', ipa: 'ɛ' }, { fr: 'grand', ipa: 'ɡʁɑ̃' }],
   },
   {
     id: 'etre-4',
@@ -87,6 +91,7 @@ export const etreSentences: EtreSentence[] = [
       { word: 'On', usage: { en: 'Informal subject pronoun, often replacing "nous"; here used impersonally like English "it" for dates.', zh: '口語主詞代詞，常代替 nous；這裡像英文的「it」，用於表達日期／年份。' } },
       { word: 'en', usage: { en: 'Preposition used before a year to mean "in".', zh: '介系詞，用在年份前表示「在……（年）」。' } },
     ],
+    syllables: [{ fr: 'On est', ipa: 'ɔ̃.n‿ɛ' }, { fr: 'en', ipa: 'ɑ̃' }, { fr: '2026', ipa: 'dø.mil.vɛ̃t.sis' }],
   },
   {
     id: 'etre-5',
@@ -102,6 +107,7 @@ export const etreSentences: EtreSentence[] = [
       { word: 'êtes', usage: { en: '"vous" form of être.', zh: 'être 的 vous 變位。' } },
       { word: 'très', usage: { en: 'Adverb "very", placed directly before the adjective.', zh: '副詞「非常」，放在形容詞前面。' } },
     ],
+    syllables: [{ fr: 'Vous êtes', ipa: 'vu.z‿ɛt' }, { fr: 'très', ipa: 'tʁɛ' }, { fr: 'intelligent', ipa: 'ɛ̃.tɛ.li.ʒɑ̃' }],
   },
   {
     id: 'etre-6',
@@ -117,5 +123,6 @@ export const etreSentences: EtreSentence[] = [
       { word: 'sont', usage: { en: '"ils / elles" form of être.', zh: 'être 的 ils/elles 變位。' } },
       { word: 'fans de', usage: { en: 'Fixed expression "fan(s) of ___" — de introduces who they admire.', zh: '固定用語「……的粉絲」，de 後面接對象。' } },
     ],
+    syllables: [{ fr: 'Ils', ipa: 'il' }, { fr: 'sont', ipa: 'sɔ̃' }, { fr: 'fans', ipa: 'fan' }, { fr: 'de', ipa: 'də' }, { fr: 'Cristiano', ipa: 'kʁis.tja.no' }, { fr: 'Ronaldo', ipa: 'ʁɔ.nal.do' }],
   },
 ];
