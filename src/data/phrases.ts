@@ -50,6 +50,17 @@ export const phraseStudyNotes: Record<string, PhraseStudyNote> = {
   p28: { structure: { en: 'Je + ne + savoir + pas (negation)', zh: 'Je + ne + savoir + pas（不知道）' }, pronunciation: { en: '/ʒə nə sɛ pa/', zh: '/ʒə nə sɛ pa/' }, rule: { en: 'sais is /sɛ/; both written final -s sounds are silent.', zh: 'sais 讀 /sɛ/；sais 和 pas 的字尾 s 都不發音。' } },
   p29: { structure: { en: 'Quelle + noun + être + il? (inversion)', zh: 'Quelle + 名詞 + être + il？（倒裝問句）' }, pronunciation: { en: '/kɛ.lœʁ ɛ.til/', zh: '/kɛ.lœʁ ɛ.til/' }, rule: { en: 'heure begins with a mute h; est-il is linked as /ɛ.til/.', zh: 'heure 的 h 是啞音；est-il 要連讀成 /ɛ.til/。' } },
   p30: { structure: { en: 'Imperative + plus + adverb + polite phrase', zh: '命令式 + plus + 副詞 + 禮貌語' }, pronunciation: { en: '/paʁl ply lɑ̃t.mɑ̃ sil tə plɛ/', zh: '/paʁl ply lɑ̃t.mɑ̃ sil tə plɛ/' }, rule: { en: 'plus is /ply/ before a consonant; lentement has two nasal vowels.', zh: 'plus 在子音前讀 /ply/；lentement 有兩個鼻母音。' } },
+  'simple-1': { structure: { en: 'Comment + ça + aller?', zh: 'Comment + ça + aller？（問近況）' }, pronunciation: { en: '/kɔ.mɑ̃ sa va/', zh: '/kɔ.mɑ̃ sa va/' }, rule: { en: 'comment ends with nasal /ɑ̃/; ça is /sa/.', zh: 'comment 的 en 讀鼻母音 /ɑ̃/；ça 讀 /sa/。' } },
+  'simple-2': { structure: { en: 'Ça + aller + adverb', zh: 'Ça + aller + 副詞（回答近況）' }, pronunciation: { en: '/sa va bjɛ̃/', zh: '/sa va bjɛ̃/' }, rule: { en: 'bien ends in the nasal vowel /jɛ̃/.', zh: 'bien 的 en 讀鼻母音 /jɛ̃/。' } },
+  'simple-3': { structure: { en: 'Comment + subject + reflexive verb appeler', zh: 'Comment + 主詞 + 反身動詞 appeler' }, pronunciation: { en: '/kɔ.mɑ̃ ty ta.pɛl/', zh: '/kɔ.mɑ̃ ty ta.pɛl/' }, rule: { en: 't’ = te before a vowel; appelles ends /pɛl/.', zh: 't’ 是 te 在母音前的省略；appelles 結尾讀 /pɛl/。' } },
+  'simple-4': { structure: { en: 'Je + reflexive pronoun + appeler + name', zh: 'Je + 反身代詞 + appeler + 名字' }, pronunciation: { en: '/ʒə ma.pɛl …/', zh: '/ʒə ma.pɛl …/' }, rule: { en: 'm’ = me before a vowel; add your name after a short pause.', zh: 'm’ 是 me 在母音前的省略；停一下後接自己的名字。' } },
+  'simple-5': { structure: { en: 'Subject + venir + d’où?', zh: '主詞 + venir + d’où？（從哪裡來）' }, pronunciation: { en: '/ty vjɛ̃ du/', zh: '/ty vjɛ̃ du/' }, rule: { en: 'viens ends with nasal /jɛ̃/; d’où is pronounced /du/.', zh: 'viens 結尾讀鼻母音 /jɛ̃/；d’où 讀 /du/。' } },
+  'simple-6': { structure: { en: 'Je + venir + de + place', zh: 'Je + venir + de + 地點' }, pronunciation: { en: '/ʒə vjɛ̃ də ɔ̃ kɔ̃ŋ/', zh: '/ʒə vjɛ̃ də ɔ̃ kɔ̃ŋ/' }, rule: { en: 'viens has nasal /jɛ̃/; Hong Kong is commonly approximated with nasal vowels in French.', zh: 'viens 的 en 讀 /jɛ̃/；Hong Kong 在法語中常近似讀作鼻母音。' } },
+  'simple-7': { structure: { en: 'Il est + quelle heure?', zh: 'Il est + quelle heure？（口語問時間）' }, pronunciation: { en: '/il ɛ kɛ.lœʁ/', zh: '/il ɛ kɛ.lœʁ/' }, rule: { en: 'heure begins with a mute h; use the uvular French r.', zh: 'heure 的 h 是啞音；r 用法語小舌音。' } },
+  'simple-8': { structure: { en: 'Il est + number + heure(s)', zh: 'Il est + 數字 + heure(s)' }, pronunciation: { en: '/il ɛ tʁwa.z‿œʁ/', zh: '/il ɛ tʁwa.z‿œʁ/' }, rule: { en: 'Make the liaison in trois heures: /z‿œʁ/.', zh: 'trois heures 要連音：/z‿œʁ/。' } },
+  'simple-9': { structure: { en: 'Je suis + un peu + adjective', zh: 'Je suis + un peu + 形容詞' }, pronunciation: { en: '/ʒə sɥi ɛ̃ pø fa.ti.ɡe/', zh: '/ʒə sɥi ɛ̃ pø fa.ti.ɡe/' }, rule: { en: 'un is nasal /ɛ̃/; fatigué(e) has the same pronunciation for both genders.', zh: 'un 讀鼻母音 /ɛ̃/；fatigué(e) 的陰陽性發音相同。' } },
+  'simple-10': { structure: { en: 'À + time expression', zh: 'À + 時間表達（道別）' }, pronunciation: { en: '/a də.mɛ̃/', zh: '/a də.mɛ̃/' }, rule: { en: 'demain ends in nasal /mɛ̃/.', zh: 'demain 的 ain 讀鼻母音 /mɛ̃/。' } },
+  'simple-11': { structure: { en: 'Fixed farewell expression', zh: '固定道別語' }, pronunciation: { en: '/o ʁə.vwaʁ/', zh: '/o ʁə.vwaʁ/' }, rule: { en: 'au is /o/ and oi is /wa/.', zh: 'au 讀 /o/；oi 讀 /wa/。' } },
 };
 
 export const essentialPhrases: Phrase[] = [
@@ -353,4 +364,19 @@ export const essentialPhrases: Phrase[] = [
       { fr: "Conduis plus prudemment, s'il te plaît.", meaning: { en: 'Drive more carefully, please.', zh: '請開車小心一點。' } },
     ],
   },
+];
+
+/** Very short everyday phrases for a first speaking session. */
+export const simplePhrases: Phrase[] = [
+  { id: 'simple-1', fr: 'Comment ça va ?', meaning: { en: 'How are you?', zh: '你好嗎？' }, variants: [] },
+  { id: 'simple-2', fr: 'Ça va bien.', meaning: { en: 'I am well.', zh: '我很好。' }, variants: [] },
+  { id: 'simple-3', fr: "Comment tu t'appelles ?", meaning: { en: 'What is your name?', zh: '你叫什麼名字？' }, variants: [] },
+  { id: 'simple-4', fr: "Je m'appelle ___.", meaning: { en: 'My name is ___.', zh: '我叫＿＿。' }, variants: [] },
+  { id: 'simple-5', fr: "Tu viens d'où ?", meaning: { en: 'Where are you from?', zh: '你從哪裡來？' }, variants: [] },
+  { id: 'simple-6', fr: 'Je viens de Hong Kong.', meaning: { en: 'I am from Hong Kong.', zh: '我來自香港。' }, variants: [] },
+  { id: 'simple-7', fr: 'Il est quelle heure ?', meaning: { en: 'What time is it?', zh: '現在幾點？' }, variants: [] },
+  { id: 'simple-8', fr: 'Il est trois heures.', meaning: { en: 'It is three o’clock.', zh: '現在三點。' }, variants: [] },
+  { id: 'simple-9', fr: 'Je suis un peu fatigué(e).', meaning: { en: 'I am a little tired.', zh: '我有一點累。' }, variants: [] },
+  { id: 'simple-10', fr: 'À demain !', meaning: { en: 'See you tomorrow!', zh: '明天見！' }, variants: [] },
+  { id: 'simple-11', fr: 'Au revoir !', meaning: { en: 'Goodbye!', zh: '再見！' }, variants: [] },
 ];

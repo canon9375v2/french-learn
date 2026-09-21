@@ -12,7 +12,11 @@ export function NavBar() {
       </NavLink>
       <nav className="nav-links">
         <NavLink to="/prononciation"><span className="nav-icon">📕</span>{ui('nav.pronunciation')}</NavLink>
-        <NavLink to="/phrases"><span className="nav-icon">💬</span>{ui('nav.phrases')}</NavLink>
+        <div className="nav-phrase-group">
+          <span className="nav-section"><span className="nav-icon">💬</span>{ui('nav.phrases')}</span>
+          <NavLink to="/phrases/essential" className="nav-sub-link">必備 30 句短句</NavLink>
+          <NavLink to="/phrases/simple" className="nav-sub-link">簡單短句</NavLink>
+        </div>
         <NavLink to="/level/A1"><span className="nav-icon">🫙</span>A1</NavLink>
         <NavLink to="/level/A2"><span className="nav-icon">🫙</span>A2</NavLink>
         <NavLink to="/level/B1"><span className="nav-icon">🫙</span>B1</NavLink>

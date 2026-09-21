@@ -3,13 +3,13 @@ import { levels } from '../data/levels';
 import { getUnitsByLevel } from '../data/units';
 import { useProgress } from '../context/ProgressContext';
 import { useLanguage } from '../context/LanguageContext';
-import { essentialPhrases } from '../data/phrases';
+import { essentialPhrases, simplePhrases } from '../data/phrases';
 
 export function ProgressPage() {
   const { state, resetProgress } = useProgress();
   const { t, ui, lang } = useLanguage();
   const wordsReviewedCount = Object.keys(state.wordsReviewed).length;
-  const phraseById = new Map(essentialPhrases.map((phrase) => [phrase.id, phrase]));
+  const phraseById = new Map([...essentialPhrases, ...simplePhrases].map((phrase) => [phrase.id, phrase]));
   const phrasePracticeDates = Object.entries(state.phrasePractice)
     .filter(([, phrases]) => Object.keys(phrases).length > 0)
     .sort(([first], [second]) => second.localeCompare(first));

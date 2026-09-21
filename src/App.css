@@ -1182,6 +1182,73 @@
   color: var(--accent);
 }
 
+.phrase-pronunciation-check {
+  margin-top: 14px;
+  padding: 9px 11px;
+  border: 1px dashed rgba(111, 82, 43, 0.45);
+  border-radius: 8px;
+}
+
+.phrase-pronunciation-check summary {
+  color: #090807;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.phrase-recording-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.phrase-recording-controls button {
+  border: 1px solid rgba(111, 82, 43, 0.45);
+  border-radius: 6px;
+  padding: 6px 9px;
+  background: rgba(255, 253, 241, 0.8);
+  color: #090807;
+  cursor: pointer;
+}
+
+.phrase-recording-controls button.recording {
+  color: #fff;
+  background: var(--danger);
+}
+
+.phrase-recording-controls audio {
+  height: 32px;
+  max-width: 100%;
+}
+
+.phrase-recording-controls > p,
+.pronunciation-feedback {
+  width: 100%;
+  margin: 2px 0;
+  font-size: 13px;
+}
+
+.pronunciation-feedback {
+  padding: 8px 10px;
+  border-left: 3px solid var(--accent);
+  background: rgba(234, 220, 171, 0.3);
+}
+
+.pronunciation-feedback p {
+  margin: 2px 0;
+}
+
+.pronunciation-feedback .good {
+  color: #345414;
+  font-weight: 600;
+}
+
+.feedback-note {
+  opacity: 0.75;
+}
+
 .phrase-practice-btn {
   border: 1px solid rgba(115, 83, 35, 0.55);
   background: linear-gradient(#c8b477, #a99051);
@@ -1259,5 +1326,110 @@
   }
   .hero h1 {
     font-size: 30px;
+  }
+}
+
+/* Left-hand lesson menu */
+@media (min-width: 901px) {
+  .app-shell {
+    flex-direction: row;
+  }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    width: 235px;
+    height: 100svh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 14px;
+    border-right: 2px solid rgba(91, 64, 29, 0.22);
+    border-bottom: 0;
+    overflow-y: auto;
+  }
+
+  .navbar .brand {
+    gap: 9px;
+    padding: 0 4px 15px;
+    font-size: 25px;
+    line-height: 1.1;
+  }
+
+  .brand-flag {
+    width: 48px;
+    height: 48px;
+    font-size: 21px;
+    border-radius: 11px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 3px;
+  }
+
+  .nav-links a,
+  .nav-section {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 15px;
+  }
+
+  .nav-icon {
+    width: 25px;
+    height: auto;
+    margin: 0 8px 0 0;
+    text-align: center;
+  }
+
+  .lang-toggle {
+    margin: 12px 10px 0;
+  }
+}
+
+.nav-phrase-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-section {
+  display: inline-flex;
+  align-items: center;
+  color: #090807;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 8px;
+}
+
+.nav-sub-link {
+  margin-left: 22px;
+  font-size: 13px !important;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .navbar {
+    position: static;
+    height: auto;
+  }
+
+  .nav-phrase-group {
+    align-items: center;
+  }
+
+  .nav-sub-link {
+    margin-left: 0;
   }
 }

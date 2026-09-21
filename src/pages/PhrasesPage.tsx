@@ -1,6 +1,7 @@
-import { essentialPhrases, phraseStudyNotes } from '../data/phrases';
+import { essentialPhrases, phraseStudyNotes, type Phrase } from '../data/phrases';
 import { SpeakButton } from '../components/SpeakButton';
 import { SyllableSpeakButton } from '../components/SyllableSpeakButton';
+import { PhrasePronunciationCheck } from '../components/PhrasePronunciationCheck';
 import { useLanguage } from '../context/LanguageContext';
 import { useProgress } from '../context/ProgressContext';
 
@@ -11,18 +12,26 @@ function localDateKey() {
   return `${date.getFullYear()}-${month}-${day}`;
 }
 
-export function PhrasesPage() {
+interface PhrasesPageProps {
+  phrases?: Phrase[];
+  title?: string;
+  intro?: string;
+}
+
+export function PhrasesPage({ phrases = essentialPhrases, title, intro }: PhrasesPageProps) {
   const { t, ui } = useLanguage();
   const { state, markPhrasePracticed, unmarkPhrasePracticed } = useProgress();
   const practicedToday = state.phrasePractice[localDateKey()] ?? {};
 
   return (
     <div className="page phrases-page">
-      <h1>{ui('phrases.title')}</h1>
-      <p className="lesson-description">{ui('phrases.intro')}</p>
+      <h1>{title ?? ui('phrases.title')}</h1>
+      <p className="lesson-description">{intro ?? ui('phrases.intro')}</p>
 
       <ol className="phrase-list">
-        {essentialPhrases.map((p, i) => (
+        {phrases.map((p, i) => {
+          const studyNote = phraseStudyNotes[p.id];
+          return (
           <li className="phrase-item" key={p.id}>
             <span className="phrase-number">{i + 1}</span>
             <div className="phrase-body">
@@ -39,24 +48,28 @@ export function PhrasesPage() {
                 </button>
               </div>
               <div className="phrase-meaning">{t(p.meaning)}</div>
-              <div className="phrase-study-notes">
+              {studyNote && <div className="phrase-study-notes">
                 <div>
                   <span>{ui('phrases.structure')}</span>
-                  <p>{t(phraseStudyNotes[p.id].structure)}</p>
+                  <p>{t(studyNote.structure)}</p>
                 </div>
                 <div>
                   <span>{ui('phrases.pronunciation')}</span>
                   <SyllableSpeakButton
                     text={p.fr}
-                    ipa={t(phraseStudyNotes[p.id].pronunciation)}
+                    ipa={t(studyNote.pronunciation)}
                     label={ui('phrases.playSegments')}
                   />
                 </div>
                 <div>
                   <span>{ui('phrases.soundRule')}</span>
-                  <p>{t(phraseStudyNotes[p.id].rule)}</p>
+                  <p>{t(studyNote.rule)}</p>
                 </div>
-              </div>
+              </div>}
+              <details className="phrase-pronunciation-check">
+                <summary>{ui('phrases.pronunciationCheck')}</summary>
+                <PhrasePronunciationCheck text={p.fr} />
+              </details>
 
               {p.variants.length > 0 && (
                 <div className="phrase-variants">
@@ -74,7 +87,8 @@ export function PhrasesPage() {
               )}
             </div>
           </li>
-        ))}
+          );
+        })}
       </ol>
     </div>
   );

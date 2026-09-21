@@ -7,10 +7,12 @@ export const uiStrings = {
   'nav.switchTo': { en: '中文', zh: 'English' },
 
   'phrases.title': { en: '30 Essential Beginner Phrases', zh: '初學法文必備 30 句短句' },
+  'phrases.simpleTitle': { en: 'Simple Everyday Phrases', zh: '簡單日常短句' },
   'phrases.intro': {
     en: 'Thirty high-frequency phrases every beginner should memorize first — for self-introductions, asking questions, and everyday survival French. Click 🔊 to hear each one spoken aloud.',
     zh: '三十句初學者最先該背下來的高頻短句——用於自我介紹、提問，以及日常生存法語。點擊每句旁的 🔊 即可聽發音。',
   },
+  'phrases.simpleIntro': { en: 'Start with these short, practical phrases for your first French conversations.', zh: '從這些簡短實用的句子開始，練習第一段法語對話。' },
   'phrases.similar': { en: 'Similar sentences — same structure', zh: '相似句 — 同一結構' },
   'phrases.practice': { en: '✓ Practice today', zh: '✓ 今日打卡' },
   'phrases.practiced': { en: '✓ Practiced today', zh: '✓ 今天已練習' },
@@ -19,6 +21,18 @@ export const uiStrings = {
   'phrases.pronunciation': { en: 'Pronunciation', zh: '讀音（IPA）' },
   'phrases.soundRule': { en: 'Sound rule', zh: '發音重點' },
   'phrases.playSegments': { en: 'Play this part slowly', zh: '播放這一段' },
+  'phrases.pronunciationCheck': { en: '🎙 Record & pronunciation check', zh: '🎙 錄音與發音自檢' },
+  'phrases.record': { en: '● Start recording', zh: '● 開始錄音' },
+  'phrases.stopRecording': { en: '■ Stop recording', zh: '■ 停止錄音' },
+  'phrases.recordAgain': { en: 'Record again', zh: '重新錄音' },
+  'phrases.recordingUnsupported': { en: 'Recording is not supported in this browser.', zh: '此瀏覽器不支援錄音。' },
+  'phrases.microphoneDenied': { en: 'Microphone access was denied. Enable it in browser settings and try again.', zh: '麥克風權限被拒絕；請在瀏覽器設定中允許後重試。' },
+  'phrases.recognitionUnsupported': { en: 'Your recording is ready to replay. This browser does not support speech recognition for the text check.', zh: '錄音可播放回聽；此瀏覽器不支援語音辨識文字比對。' },
+  'phrases.heard': { en: 'Recognized: “{{text}}”', zh: '辨識結果：「{{text}}」' },
+  'phrases.matchScore': { en: 'Word match: {{score}}%', zh: '文字吻合度：{{score}}%' },
+  'phrases.checkWords': { en: 'Practice these again: {{words}}', zh: '建議再練：{{words}}' },
+  'phrases.allWordsRecognized': { en: 'All target words were recognized.', zh: '目標句子的詞語都已辨識到。' },
+  'phrases.feedbackNote': { en: 'This checks recognized words, not a clinical accent score. Compare your recording with the model audio and IPA notes.', zh: '此功能比對辨識到的詞語，不是音位級口音評分；請同時對照標準音檔與 IPA 重點。' },
 
   'home.title': { en: 'Learn French from zero to TCF Canada', zh: '從零開始學法文，邁向 TCF Canada' },
   'home.subtitle': {
