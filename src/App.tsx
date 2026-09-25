@@ -9,6 +9,7 @@ import { TCFInfoPage } from './pages/TCFInfoPage';
 import { ProgressPage } from './pages/ProgressPage';
 import { FlashcardsPage } from './pages/FlashcardsPage';
 import { EtreVerbPage } from './pages/EtreVerbPage';
+import { A1CheatSheetPage } from './pages/A1CheatSheetPage';
 import { simplePhrases } from './data/phrases';
 import { useLanguage } from './context/LanguageContext';
 import './App.css';
@@ -30,6 +31,7 @@ function App() {
           />
           <Route path="/level/:levelId" element={<LevelOverview />} />
           <Route path="/level/A1/etre" element={<EtreVerbPage />} />
+          <Route path="/level/A1/cheat-sheet" element={<A1CheatSheetPage />} />
           <Route path="/level/:levelId/:unitId" element={<LessonPage />} />
           <Route path="/tcf-canada" element={<TCFInfoPage />} />
           <Route path="/progress" element={<ProgressPage />} />
