@@ -1023,6 +1023,119 @@
   color: #fff;
 }
 
+.scenario-panel {
+  margin: 24px 0 32px;
+  padding: 20px;
+  border: 1px solid var(--accent-border);
+  border-radius: 10px;
+  background: var(--accent-bg);
+}
+
+.scenario-panel-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.scenario-panel h2,
+.scenario-result h3 {
+  margin: 0 0 6px;
+}
+
+.scenario-panel-heading p,
+.scenario-card-count,
+.scenario-result > p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.scenario-card-count {
+  white-space: nowrap;
+}
+
+.scenario-controls {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.scenario-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.scenario-controls select {
+  min-width: 170px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 10px;
+  background: #fff;
+  color: #241f14;
+  font: inherit;
+  font-size: 14px;
+}
+
+.scenario-generate {
+  border: 0;
+  border-radius: 7px;
+  padding: 10px 15px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+}
+
+.scenario-generate:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.scenario-error {
+  margin-top: 12px;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.scenario-result {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.scenario-label {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.scenario-result blockquote {
+  margin: 16px 0;
+  padding: 14px 16px;
+  border-left: 4px solid var(--accent);
+  background: var(--code-bg);
+  color: var(--text-h);
+  font-size: 20px;
+}
+
+.scenario-targets ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+@media (max-width: 700px) {
+  .scenario-panel-heading { display: block; }
+  .scenario-card-count { display: block; margin-top: 6px; }
+}
+
 .flashcard-wrap {
   max-width: 620px;
   margin: 0 auto;
